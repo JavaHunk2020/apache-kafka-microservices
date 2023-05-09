@@ -16,8 +16,8 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import com.technohunk.kafka.service.model.User;
 
 @Configuration
-public class KafkaProducerConfig 
-{
+public class KafkaProducerConfig {
+	
 	@Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 	

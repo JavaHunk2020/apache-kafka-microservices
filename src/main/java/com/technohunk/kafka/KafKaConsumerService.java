@@ -13,18 +13,24 @@ public class KafKaConsumerService
 	private final Logger logger 
 		= LoggerFactory.getLogger(KafKaConsumerService.class);
 	
-	@KafkaListener(topics = "${general.topic.name}", 
+/*	@KafkaListener(topics = "${general.topic.name}", 
 			groupId = "${general.topic.group.id}")
 	public void consume1(String message) {
-		logger.info(String.format("Message recieved from consumer1 -> %s", message));
+		logger.info(String.format("#####MESSAGE RECIEVED FROM CONSUMER##-1 -> %s", message));
 	}
+	
 	
 	@KafkaListener(topics = "${general.topic.name}", 
 			groupId = "${general.topic.group.id}")
 	public void consume2(String message) {
-		logger.info(String.format("Message recieved from consumer2 -> %s", message));
+		logger.info(String.format("###MESSAGE RECIEVED FROM CONSUMER#-2 -> %s", message));
 	}
 	
+	@KafkaListener(topics = "${general.topic.name}", 
+			groupId = "${general.topic.group.id}")
+	public void consume3(String message) {
+		logger.info(String.format("###MESSAGE RECIEVED FROM CONSUMER#-3 -> %s", message));
+	}
 	
 	@KafkaListener(topics = "${user.topic.name}", 
 			groupId = "${user.topic.group.id}",
@@ -32,4 +38,30 @@ public class KafKaConsumerService
 	public void consume(User user) {
 		logger.info(String.format("User created -> %s", user));
 	}
+	
+	@KafkaListener(topics = "${general.topic.name}", 
+			groupId = "${general.topic.group.id}")
+	public void consume4(String message) {
+		logger.info(String.format("###MESSAGE RECIEVED FROM CONSUMER#-4 -> %s", message));
+	}
+	*/
+	
+	//${general.topic.name} =>>>3 partitions
+	/*@KafkaListener(topics = "${general.topic.name}", 
+			groupId = "ram500gn",containerFactory = "npkafkaListenerContainerFactory")
+	public void consume5(String message) {
+		logger.info(String.format("###MESSAGE RECIEVED FROM CONSUMER#-5 -> %s", message));
+	}
+	
+	@KafkaListener(topics = "${general.topic.name}",groupId = "rab39191",containerFactory = "kafkaListenerContainerFactory")
+	public void consume6(String message) {
+		logger.info(String.format("###MESSAGE RECIEVED FROM CONSUMER#-6 -> %s", message));
+	}*/
+	
+	@KafkaListener(topics = "${general.topic.name}",groupId = "rab39191",containerFactory = "kafkaListenerContainerFactory")
+	public void consume7(String message) {
+		logger.info(String.format("###MESSAGE RECIEVED FROM CONSUMER#-7 -> %s", message));
+	}
+	
+	
 }

@@ -27,12 +27,6 @@ public class KafKaProducerService
     private KafkaTemplate<String, String> kafkaTemplate;
 
 	//2. Topic with user object payload
-    
-    @Value(value = "${user.topic.name}")
-    private String userTopicName;
-    
-    @Autowired
-    private KafkaTemplate<String, User> userKafkaTemplate;
 	
 	public void sendMessage(String message) 
 	{
@@ -52,6 +46,14 @@ public class KafKaProducerService
             }
        });
 	}
+	
+	
+	
+	  @Value(value = "${user.topic.name}")
+	    private String userTopicName;
+	    
+	    @Autowired
+	    private KafkaTemplate<String, User> userKafkaTemplate;
 	
 	public void saveCreateUserLog(User user) 
 	{

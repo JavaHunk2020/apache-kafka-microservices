@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageProducerService {
 	
-	
+	//application.properties
 	@Value(value = "${general.topic.name}")
     private String topicName;
 	
@@ -26,9 +26,7 @@ public class MessageProducerService {
 
 	@PostConstruct
 	public void produceMessage() {
-		
 		ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
-		 
 		ses.scheduleAtFixedRate(()-> {
 			   count++; 
 			   String message="TechnoHunk00"+count+" : "+new Date();
@@ -36,7 +34,6 @@ public class MessageProducerService {
 			   kafkaTemplate.send(topicName, message);
 			 }
 		, 1, 3, TimeUnit.SECONDS);
-		
 	}
 	
 }
